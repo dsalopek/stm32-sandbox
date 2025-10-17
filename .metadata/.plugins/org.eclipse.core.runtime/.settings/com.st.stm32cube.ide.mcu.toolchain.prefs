@@ -1,0 +1,6 @@
+default=local-arm-none-eabi
+eclipse.preferences.version=1
+local.format=1
+local/0/location=/home/sokoban/Downloads/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/bin
+local/0/name=local-arm-none-eabi
+local/0/prefix=arm-none-eabi-
