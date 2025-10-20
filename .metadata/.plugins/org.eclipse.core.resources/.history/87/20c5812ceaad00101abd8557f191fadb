@@ -64,8 +64,8 @@ int main(void)
 			speedMultiplierPreviousState = 0x1; // set button state to pressed
 		} else {
 			if(speedMultiplierPreviousState == 0x1) { // if button was released
-				ledSpeedMultiplier += 3; //increase speed multiplier by 3
-				if(ledSpeedMultiplier > 9) {
+				ledSpeedMultiplier += 2; //increase speed multiplier by 2
+				if(ledSpeedMultiplier > 10) {
 					ledSpeedMultiplier = 1; //reset after multiplier reaches 5
 				}
 			}
@@ -76,7 +76,7 @@ int main(void)
 			*gpio_d_output &= ~(LEDS[ii]); //for each LED bit, reset
 		}
 		*gpio_d_output |= LEDS[ledIndex]; //set bit for current LED at ledIndex
-		for(int ii = 0; ii < (ledSpeedMultiplier * ledSpeed); ii++) {} //artificial delay
+		for(uint32_t ii = 0; ii < (ledSpeedMultiplier * ledSpeed); ii++) {} //artificial delay
 
 		ledIndex++;
 		if(ledIndex >= LED_CNT) {

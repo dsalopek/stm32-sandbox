@@ -1,4 +1,4 @@
-13:55:39 **** Incremental Build of configuration Debug for project variable_led_pulse_pb ****
+14:25:00 **** Incremental Build of configuration Debug for project variable_led_pulse_pb ****
 make -j16 all 
 arm-none-eabi-size  variable_led_pulse_pb.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  variable_led_pulse_pb.elf
 Finished building: default.size.stdout
  
 
-13:55:40 Build Finished. 0 errors, 0 warnings. (took 90ms)
+14:25:00 Build Finished. 0 errors, 0 warnings. (took 97ms)
 
