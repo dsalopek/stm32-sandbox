@@ -1,16 +1,26 @@
-2025-10-18 13:30:08,962 [INFO] WebApp:194 - Connection lost
-2025-10-18 13:30:09,360 [INFO] WebApp:191 - Connection restablished
-2025-10-18 13:30:41,432 [INFO] WebApp:194 - Connection lost
-2025-10-18 13:30:42,814 [INFO] WebApp:191 - Connection restablished
-2025-10-18 13:48:31,368 [INFO] WebApp:194 - Connection lost
-2025-10-18 13:48:31,479 [INFO] WebApp:191 - Connection restablished
-2025-10-18 13:51:12,993 [INFO] WebApp:194 - Connection lost
-2025-10-18 13:51:20,460 [INFO] WebApp:191 - Connection restablished
-2025-10-18 15:01:18,428 [INFO] WebApp:194 - Connection lost
-2025-10-18 15:01:21,915 [INFO] WebApp:191 - Connection restablished
-2025-10-18 15:02:24,669 [INFO] WebApp:194 - Connection lost
-2025-10-18 15:02:25,125 [INFO] WebApp:191 - Connection restablished
-2025-10-18 15:03:20,487 [INFO] WebApp:194 - Connection lost
-2025-10-18 15:03:20,626 [INFO] WebApp:191 - Connection restablished
-2025-10-18 15:03:52,880 [INFO] WebApp:194 - Connection lost
-2025-10-18 15:03:52,985 [INFO] WebApp:191 - Connection restablished
+2025-10-20 05:04:32,584 [INFO] WebApp:194 - Connection lost
+2025-10-20 05:04:32,712 [INFO] WebApp:191 - Connection restablished
+2025-10-20 05:21:48,976 [INFO] WebApp:194 - Connection lost
+2025-10-20 05:21:49,086 [INFO] WebApp:191 - Connection restablished
+2025-10-20 08:53:59,521 [INFO] WebApp:194 - Connection lost
+2025-10-20 08:53:59,638 [INFO] WebApp:191 - Connection restablished
+2025-10-20 09:17:32,431 [INFO] WebApp:194 - Connection lost
+2025-10-20 09:17:32,523 [INFO] WebApp:191 - Connection restablished
+2025-10-20 10:08:51,736 [INFO] WebApp:194 - Connection lost
+2025-10-20 10:08:51,868 [INFO] WebApp:191 - Connection restablished
+2025-10-20 10:32:49,362 [INFO] WebApp:194 - Connection lost
+2025-10-20 10:32:49,700 [INFO] WebApp:191 - Connection restablished
+2025-10-20 13:08:00,976 [INFO] MainUpdater:2872 - connection check result : 10
+2025-10-20 13:08:01,256 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-10-20 13:08:01,265 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-10-20 13:08:01,265 [INFO] FinderPluginLoader:96 - Searching for filters in installed packs
+2025-10-20 13:08:02,701 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-10-20 13:08:02,701 [INFO] DetailPanel:341 - Set advertising image to /home/sokoban/STM32Cube/Repository//en.mcu-finder-stm32n6dk.jpg
+2025-10-20 13:08:04,902 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-10-20 13:08:04,941 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-10-20 13:08:04,941 [INFO] DetailPanel:341 - Set advertising image to /home/sokoban/STM32Cube/Repository//en.mcu-finder-stm32n6dk.jpg
+2025-10-20 13:08:23,621 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-10-20 13:08:23,623 [INFO] ApiDb:448 - Save user favorites file /home/sokoban/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2025-10-20 13:08:23,623 [INFO] ApiDb:452 - User favorites MCUs=[]
+2025-10-20 13:08:23,624 [INFO] ApiDb:448 - Save user favorites file /home/sokoban/.stm32cubeide/favorites.boards.txt: 2 item(s)
+2025-10-20 13:08:23,624 [INFO] ApiDb:452 - User favorites Boards=[NUCLEO-C031C6, STM32F411E-DISCO]
