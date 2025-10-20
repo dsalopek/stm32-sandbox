@@ -55,7 +55,7 @@ int main(void)
 		*gpio_d_output |= LEDS[ledIndex]; //set bit for current LED at ledIndex
 		for(uint16_t ii = 0; ii < 50000; ii++) {} //artificial delay
 
-		ledIndex++;
+
 		if(ledIndex >= LED_CNT) {
 			ledIndex = 0; // reset ledIndex to 0 and loop
 		}

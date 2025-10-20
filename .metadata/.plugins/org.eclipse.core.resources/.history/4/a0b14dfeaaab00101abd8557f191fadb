@@ -25,41 +25,26 @@
 int main(void)
 {
 	uint32_t *rcc_ahb1enr = (uint32_t *) 0x40023830; // rcc enable for AHB1 bus
+	uint32_t *gpio_a_register = (uint32_t *) 0x40020000; // address for GPIO A register
 	uint32_t *gpio_d_register = (uint32_t *) 0x40020C00; // address for GPIO D register
 
-	*rcc_ahb1enr |= (0x1 << 3); // enable clock for GPIO port D (bit 3)
+	*rcc_ahb1enr |= 0x1; // enable clock for GPIO port A
+	*rcc_ahb1enr |= (0x1 << 3); // enable clock for GPIO port B
 
-	// PD12: Green LED
-	// PD13: Orange LED
-	// PD14: Red LED
-	// PD15: Blue LED
+	*gpio_a_register &= ~(0x3); // reset mode for PA0
 
-	*gpio_d_register &= ~(0xFF << 24); // reset mode for PD12 - PD15
-	*gpio_d_register |= (0x55 << 24); // set PD12 - PD15 as g/p output
+	*gpio_d_register &= ~(0x3 << 24); // reset mode for PD12;
+	*gpio_d_register |= (0x1 << 24); // set PD12 as g/p output
 
+	uint32_t *gpio_a_input = (uint32_t *) 0x40020010; // GPIO port A input address (GPIO_A_REGISTER + 0x10 offset)
 	uint32_t *gpio_d_output = (uint32_t *) 0x40020C14; // GPIO port D input address (GPIO_D_REGISTER + 0x14 offset)
 
-	//reset bits for PD12 - PD15
-	*gpio_d_output &= ~(0xF << 12);
-
-	uint16_t LED_CNT = 4;
-	uint32_t LEDS[] = {0x1 << 12, 0x1 << 13, 0x1 << 14, 0x1 << 15};
-
-	uint32_t ledIndex = 0;
-
 	while (1) {
-
-		for(uint16_t ii = 0; ii < LED_CNT; ii++) {
-			*gpio_d_output &= ~(LEDS[ii]); //for each LED bit, reset
+		if (*gpio_a_input & 1) { // if first bit of gpio_a_input is 1
+			*gpio_d_output &= ~(0x1 << 12); // set bit 12 to 0
+		} else {
+			*gpio_d_output |= 0x1 << 12; // set bit 12 to 1
 		}
-		*gpio_d_output |= LEDS[ledIndex]; //set bit for current LED at ledIndex
-		for(uint16_t ii = 0; ii < 50000; ii++) {} //artificial delay
-
-		ledIndex++;
-		if(ledIndex >= LED_CNT) {
-			ledIndex = 0; // reset ledIndex to 0 and loop
-		}
-
 	}
 
 }

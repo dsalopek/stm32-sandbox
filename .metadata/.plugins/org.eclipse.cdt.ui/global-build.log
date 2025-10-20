@@ -1,4 +1,4 @@
-17:06:01 **** Build of configuration Debug for project blink_all_leds ****
+12:58:33 **** Build of configuration Debug for project blink_all_leds ****
 make -j16 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411vetx.d" -MT"Startup/startup_stm32f411vetx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f411vetx.o" "../Startup/startup_stm32f411vetx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -DSTM32F411E_DISCO -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
@@ -15,8 +15,15 @@ Finished building target: blink_all_leds.elf
 arm-none-eabi-size  blink_all_leds.elf 
 arm-none-eabi-objdump -h -S blink_all_leds.elf  > "blink_all_leds.list"
    text	   data	    bss	    dec	    hex	filename
-    884	      0	   1568	   2452	    994	blink_all_leds.elf
+    960	      0	   1568	   2528	    9e0	blink_all_leds.elf
 Finished building: default.size.stdout
  
 Finished building: blink_all_leds.list
+ 
+12:58:36 **** Incremental Build of configuration Debug for project blink_all_leds ****
+make -j16 all 
+arm-none-eabi-size  blink_all_leds.elf 
+   text	   data	    bss	    dec	    hex	filename
+    960	      0	   1568	   2528	    9e0	blink_all_leds.elf
+Finished building: default.size.stdout
  

@@ -37,28 +37,24 @@ int main(void)
 	*gpio_d_register &= ~(0xFF << 24); // reset mode for PD12 - PD15
 	*gpio_d_register |= (0x55 << 24); // set PD12 - PD15 as g/p output
 
-	uint32_t *gpio_d_output = (uint32_t *) 0x40020C14; // GPIO port D input address (GPIO_D_REGISTER + 0x14 offset)
-
-	//reset bits for PD12 - PD15
-	*gpio_d_output &= ~(0xF << 12);
-
-	uint16_t LED_CNT = 4;
-	uint32_t LEDS[] = {0x1 << 12, 0x1 << 13, 0x1 << 14, 0x1 << 15};
-
-	uint32_t ledIndex = 0;
+	uint32_t *gpio_d_output = (uint32_t *) (gpio_d_register + 0x14); // GPIO port D input address (GPIO_D_REGISTER + 0x14 offset)
 
 	while (1) {
+		*gpio_d_output &= ~(0x1 << 12);
+		*gpio_d_output |= 0x1 << 12;
+		for(uint16_t ii = 0; ii < 10000; ii++) {}
 
-		for(uint16_t ii = 0; ii < LED_CNT; ii++) {
-			*gpio_d_output &= ~(LEDS[ii]); //for each LED bit, reset
-		}
-		*gpio_d_output |= LEDS[ledIndex]; //set bit for current LED at ledIndex
-		for(uint16_t ii = 0; ii < 50000; ii++) {} //artificial delay
+		*gpio_d_output &= ~(0x1 << 13);
+		*gpio_d_output |= 0x1 << 13;
+		for(uint16_t ii = 0; ii < 10000; ii++) {}
 
-		ledIndex++;
-		if(ledIndex >= LED_CNT) {
-			ledIndex = 0; // reset ledIndex to 0 and loop
-		}
+		*gpio_d_output &= ~(0x1 << 13);
+		*gpio_d_output |= 0x1 << 13;
+		for(uint16_t ii = 0; ii < 10000; ii++) {}
+
+		*gpio_d_output &= ~(0x1 << 14);
+		*gpio_d_output |= 0x1 << 14;
+		for(uint16_t ii = 0; ii < 10000; ii++) {}
 
 	}
 
